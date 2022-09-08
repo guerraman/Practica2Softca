@@ -1,4 +1,7 @@
 # Practica2Softca
+
+//clonado el repositorio de githud en el local
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2
 $ git clone https://github.com/guerraman/Practica2Softca.git
 Cloning into 'Practica2Softca'...
@@ -38,6 +41,7 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   README.md
 
+// realizando el commit inicial
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git commit -m "commit inicial"
@@ -52,6 +56,8 @@ Your branch is ahead of 'origin/main' by 1 commit.
 
 nothing to commit, working tree clean
 
+// primer push mandando los cambio al repositorio remoto
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git push origin main
 Enumerating objects: 5, done.
@@ -62,6 +68,8 @@ Writing objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/guerraman/Practica2Softca.git
    517bffa..5f8b21c  main -> main
+
+//se creo el archivo gitignore para ingnorar privado.txt y carpeta privada
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git status
@@ -126,6 +134,7 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   1.txt
 
+// se añadio fichero1.txt
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git commit -m "añadido fichero 1.txt"
@@ -133,8 +142,12 @@ $ git commit -m "añadido fichero 1.txt"
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 1.txt
 
+//se creo el tag v0.1
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git tag v0.1
+
+// mandando el tag v0.1 al repositorio remoto
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git push --tag origin main
@@ -148,13 +161,17 @@ To https://github.com/guerraman/Practica2Softca.git
    5f8b21c..8573edf  main -> main
  * [new tag]         v0.1 -> v0.1
 
+// creando la rama rama v0.2
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git branch v0.2
 
+//entrando a la rama v0.2
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git checkout v0.2
 Switched to branch 'v0.2'
 
+//creando el fichero 2.txt
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ touch 2.txt
 
@@ -177,12 +194,16 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         new file:   2.txt
 
+//agregando el fichero 2.txt en la rama v0.2
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ git commit -m " se agrego 2.txt"
 [v0.2 054e235]  se agrego 2.txt
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 2.txt
+
+
+//subiendo los cambios al repositorio remoto
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ git push origin v0.2
@@ -200,10 +221,13 @@ remote:
 To https://github.com/guerraman/Practica2Softca.git
  * [new branch]      v0.2 -> v0.2
 
+// volviendo a la rama main
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ git checkout main
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
+
+// haciendo el merge de v0.2 en la rama main
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git merge v0.2 -m "merge de v0.2"
@@ -212,6 +236,8 @@ Fast-forward (no commit created; -m option ignored)
  2.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 2.txt
+
+// en el fichero 1.txt de la rama main escribo la palabra "hola" y realizo el commit
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git add .
@@ -232,6 +258,7 @@ $ git commit -m " hola en 1.txt"
 [main 20a38c4]  hola en 1.txt
  1 file changed, 1 insertion(+)
 
+// entro a la rama v0.2
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git checkout v0.2
 Switched to branch 'v0.2'
@@ -246,6 +273,8 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+//pongo la palabra adios en 1.txt en la rama v0.2 y realizo el commit
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ git add .
 
@@ -254,17 +283,23 @@ $ git commit -m "adios en 1.txt "
 [v0.2 49f9061] adios en 1.txt
  1 file changed, 1 insertion(+)
 
+// me paso a la rama main 
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (v0.2)
 $ git checkout main
 Switched to branch 'main'
 Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
 
+// realizo el merge de v0.2 en la rama main
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git merge v0.2
 Auto-merging 1.txt
 CONFLICT (content): Merge conflict in 1.txt
 Automatic merge failed; fix conflicts and then commit the result.
+
+// resuelvo el conflicto y luego guarda cambios
 
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main|MERGING)
 $ git add .
@@ -286,6 +321,7 @@ ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main|MERGING)
 $ git commit -m "arreglado el conflicto en 1.txt"
 [main 1da783f] arreglado el conflicto en 1.txt
 
+//listado de ramas
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git branch --merged
 * main
@@ -297,6 +333,8 @@ $ git branch --no-merged
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git tag v0.2
 
+// borrando la rama v0.2
+
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git branch -d v0.2
 Deleted branch v0.2 (was 49f9061).
@@ -304,6 +342,7 @@ Deleted branch v0.2 (was 49f9061).
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git config --global alias.list 'log --oneline --decorate --graph --all'
 
+// listados de cambios decodos
 ingen@DESKTOP-SKSCDO7 MINGW64 ~/practica2/Practica2Softca (main)
 $ git list
 *   1da783f (HEAD -> main, tag: v0.2) arreglado el conflicto en 1.txt
